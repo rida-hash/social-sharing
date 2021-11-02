@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {FacebookShareButton, FacebookIcon, WhatsappShareButton, WhatsappIcon, LinkedinIcon, LinkedinShareButton} from "react-share";
 
 function App() {
+
+  const mainStyling={
+    display: "flex",
+    alignItems: "center",
+    justifyContent:"center"
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={ mainStyling }>
+    <FacebookShareButton
+      url={"http://www.camperstribe.com"}
+      quote={"CampersTribe - World is yours to explore"}
+      hashtag="#camperstribe">
+      <FacebookIcon logoFillColor="white" round={true} size={36} style={{padding:"10px"}}
+      />
+    </FacebookShareButton>
+    <WhatsappShareButton
+      url={"http://www.camperstribe.com"}
+      quote={"CampersTribe - World is yours to explore"}
+      hashtag="#camperstribe">
+      <WhatsappIcon logoFillColor="white" round={true} size={36} style={{padding:"10px"}} />
+    </WhatsappShareButton>
+    <LinkedinShareButton
+      url={"http://www.camperstribe.com"}
+      quote={"CampersTribe - World is yours to explore"}
+      hashtag="#camperstribe">
+      <LinkedinIcon logoFillColor="white" round={true} size={36} style={{padding:"10px"}} />
+    </LinkedinShareButton>
     </div>
   );
 }
